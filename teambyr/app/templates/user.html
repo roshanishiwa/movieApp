@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<table>
+    	<div class="banner" style="padding-bottom: 30px">
+			<div class="sub-form" style="color: #001a33">
+				Welcome, {{ user.username }}
+			</div>
+
+			<img src="{{ picture }}" width="90" style="padding-left: 20px">
+
+			{% if user.last_seen %}
+				<p class="timeSeen" style="padding-left: 20px">
+					Last seen on: {{ user.last_seen }}
+				</p>
+			{% endif %}
+
+			{% if user.about_me %}
+				<div style="background-color: white; padding: 30px; color: #29343d">
+					{{ user.about_me }}
+				</div>
+			{% endif %}
+
+			{% if user == current_user %}
+				<p>
+					<a href="{{ url_for('profile') }}" class="timeseen" style="padding-left: 20px">
+						Edit your profile
+					</a>
+				</p>
+			{% endif %}
+		</div>
+		
+		<tr>
+			<td style="padding-left: 20px">
+				{% for post in posts %}
+					{% include '_post.html' %}
+				{% endfor %}
+			</td>
+		</tr>
+	</table>
+{% endblock %}

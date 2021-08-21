@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="text-align: center">
+
+        <div class="sub-form", style="padding-top: 150px">
+            SEARCH
+        </div>
+
+        <form action ="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.search(placeholder="search for a movie", class ="login-input") }}<br>
+            </p>
+            
+            <p>
+                {{ form.submit(class = 'sign-in') }}
+            </p>
+
+            <div class="movielist">
+                {% for movie in movies %}
+                    <div class = "movie-box" style="padding-left: 20px">
+                        {% include '_movie.html' %}
+                    </div>
+                {% endfor %}
+            </div> 
+        </form>
+    </div>
+{% endblock %}

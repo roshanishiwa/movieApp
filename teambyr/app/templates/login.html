@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div style = "text-align:center">
+		<h1 style = "padding-top: 150px">
+			FLIXMIX
+		</h1>
+
+		<form action ="" method="post" novalidate>
+			{{ form.hidden_tag() }}
+			<p>
+				{{ form.username(placeholder="username", class="login-input") }}
+
+				{% for error in form.username.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.password(placeholder="password", class="login-input") }}
+
+				{% for error in form.password.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.submit(class = 'sign-in') }}
+			</p>
+
+			<p>
+				{{ form.remember_me() }} 
+
+				{{ form.remember_me.label }}
+			</p>
+		</form>
+		<p>
+			New User?
+			<a href="{{ url_for('register') }}">
+				Click to Register!
+			</a>
+		</p>
+
+		<p>
+			<a href="{{ url_for('wall') }}">
+				Super Secret!
+			</a>
+		</p>
+	</div>
+{% endblock %}

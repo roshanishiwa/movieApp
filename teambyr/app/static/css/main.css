@@ -1,0 +1,352 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    color: white;
+    background-color: #0c0032;
+    font-size: 20px; 
+}
+/*
+a:hover {
+    color: white;
+}
+*/
+h1 {
+    font-weight: bold;
+    font-size: 100px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    color: #4770eb;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 30px;
+    color: white; 
+}
+
+.register-title {
+    font-weight: bold;
+    font-size: 70px;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    color: #4770eb;   
+}
+
+.nav-container {
+    list-style-type: none;
+    background: #ffffff;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: darkslategray;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    z-index: 999;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: lightgreen;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+li a:hover:not(.working) {
+    background-color: lightgreen;
+}
+
+.working {
+    background-color: lightgreen;
+}
+
+.nav-container .current {
+    background-color: lightgreen;
+}
+
+.flash-container {
+    background-color: #ee7977; 
+    opacity: 1;
+    height: 20px;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: white;
+}
+
+.button {
+    width : 65px;
+    padding : 3px;    
+    font-size: 16px;
+    margin : 5px;
+    padding : 5px;
+}
+
+.sign-in{
+    width: 35%;
+    margin: 4px;
+    padding: 4px;
+    font-style: 100%;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 17px; 
+    text-align: center;  
+    background-color: lightgreen;
+}
+
+ .button:hover {
+    background-color: #f0f5ff00;
+    color: #0040ff;
+    font-weight: bold;
+}
+
+.login-input{
+    width: 35%;
+    margin: 4px;
+    padding: 4px;
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 17px; 
+    text-align: center;  
+}
+
+.remember {
+    font-size: 11px;
+}
+
+/*
+.user {
+    color: darkblue;
+    float: right;
+    right: 0px;
+}
+*/
+
+.register-button{
+    width: 35%;
+    margin: 4px;
+    padding: 4px;
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 17px; 
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgreen;  
+}
+
+.registrationForm {
+    text-align: left;
+    margin: 5px;
+    padding: 5px;
+    height: 50px;
+    width: 15%;
+}
+
+.Search {
+    align-items: right;
+}
+
+.timeSeen {
+    font-size: 12px;
+}
+
+.sub-form {
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 40px;
+    padding-bottom: 14px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #4CAF50;
+}
+
+.desc {
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.banner {
+    background: lightgreen;
+}
+
+.genre-select {
+    text-align: center;
+}
+
+.index-search {
+    width: 35%;
+    /*padding-left: 20px;*/
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 20px; 
+}
+
+.search-bttn {
+    width: 35%;
+    margin: 4px;
+    font-style: 100%;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 13px;   
+    background-color: white;
+}
+
+.genre-item {
+    margin: 2px;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #327b94;
+    background-color: #fbfdf7;
+    color: #327b94;
+    font-size: 12px;
+}
+
+.movietable {
+    width: 100%;
+    margin: 0px;
+    color: darkslategray;
+}
+
+.movie-box {
+    display: flex;
+    vertical-align: middle;
+    /*background-color: #ccffcc;*/
+    background-color: #f0edf7;
+    margin: 3px;
+    padding: 3px;
+    color: black;
+}
+
+@media screen and (min-width: 800px) and (max-width:1200px) {
+    .movie-box{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .movie-box{
+        width: 99%;
+    }
+}
+@media screen and (min-width:1200px) {
+    .movie-box{
+        width: 32%;
+    }
+}
+
+.moviedesc {
+    font-style: thin;
+    margin: 5px;
+    padding: 15px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: darkslategray;
+    word-break: break-all;
+}
+
+.movietitle {
+    text-align: center;
+    font-weight: bold;
+    color: #2a6f6f;
+    font-size: 20px;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.genre-select {
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 17px; 
+    text-align: center;
+    list-style-type: none;
+}
+
+.user-post{
+    width: 300px;
+    padding: 10px;
+    margin: 20px;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+}
+
+.movielist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.discussion {
+    padding-left: 40px;
+    padding-top: 60px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+.dis-post{
+    width: 35%;
+    margin: 4px;
+    padding: 4px;
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 17px; 
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(93, 216, 93);
+}
+
+.dis-button {
+    width: 25%;
+    margin: 4px;
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 11px; 
+    text-align: center;
+    background-color: rgb(209, 240, 250);  
+}
+
+.del-movie {
+    width: 20%;
+    margin: 4px;
+    font-style: 100%;
+    font-family: sans-serif;
+    font-size: 11px; 
+    text-align: center;
+    background-color: rgb(252, 79, 79);
+}
+
+.dis-title {
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 14px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: rgb(0, 138, 0);
+}
+
+.discussionbanner {
+    background: rgb(192, 255, 192);
+}

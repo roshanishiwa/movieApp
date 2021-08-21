@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="text-align: center">
+		<div class="register-title">
+			ADMIN SIGN-UP
+		</div>
+
+		<h2>
+			Create your administration account
+		</h2>
+
+		<form action="" method="post">
+			{{ form.hidden_tag() }}
+			<p>
+				{{ form.username(placeholder="username", class ="login-input") }}<br>
+				
+				{% for error in form.username.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.email(placeholder="email", class ="login-input") }}<br>
+				
+				{% for error in form.email.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.password(placeholder="password", class ="login-input" )}}<br>
+				
+				{% for error in form.password.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.password2(placeholder="repeat password", class ="login-input" )}}<br>
+				
+				{% for error in form.password2.errors %}
+					<span style="color: red;">
+						[{{ error }}]
+					</span>
+				{% endfor %}
+			</p>
+			
+			<p>
+				{{ form.submit(class="register-button") }}
+			</p>
+		</form>
+    </div>
+{% endblock %}

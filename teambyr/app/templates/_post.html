@@ -1,0 +1,31 @@
+<table class="user-post" style="width:100%;" valign="top">
+    <tr>
+        <th rowspan="2">
+            <img src="{{ url_for('static', filename = 'default.png')}}" width="100">
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            <div class="movietitle">
+                Movie: 
+                <a href="{{ url_for('discussion', movieid=post.movie_id) }}" style="font-weight: bold;">
+                    {{ post.movie_title }}
+                </a>
+            </div><br>
+        </td>
+
+        <td width="80%" class="moviedesc">
+            {{ post.body }}
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            By: 
+            <a href="{{ url_for('user', username=post.user_name) }}" style="font-weight: bold;">
+                {{ post.user_name }}
+            </a><br><br>
+        </td>
+    </tr>
+</table>

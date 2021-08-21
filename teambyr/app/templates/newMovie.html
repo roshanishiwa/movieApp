@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="text-align: center">
+        <div class="sub-form", style="padding-top: 150px">
+            Add a new movie!
+        </div>
+
+        <div style="padding-top:25px" class="desc" style="padding-bottom: 25px">
+            Add your movies here
+        </div>
+
+        <form action ="/newMovie" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+
+            <p>
+                {{ form.title(placeholder="enter a title", class ="login-input") }}
+            </p>
+        
+            <p>
+                {{ form.description(placeholder="enter a description", class ="login-input") }}
+            </p>
+
+            <p>
+                What is the genre?<br>
+            </p>
+
+            <p>
+                {{ form.genres(class='genre-select') }}<br>
+            </p>
+
+            <p> 
+                {{ form.image }}
+            </p>
+
+            <p>
+                {{ form.add(class="sign-in") }}
+            </p>
+        </form>
+    </div>
+{% endblock %}

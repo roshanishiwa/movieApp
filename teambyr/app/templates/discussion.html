@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+ 
+<table class="discussionbanner" style="width:100%;" valign="top">
+    <tr>
+        <td rowspan = "10" class="discussion">
+            <img src="{{ url_for('static', filename = movie.image_id)}}" width="155"><br><br>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="5" class="dis-title" style="padding-left: 20px">
+            {{ movie.title }}
+        </td>
+    </tr>
+
+    <tr>
+        <td style="padding-left: 20px" class="moviedesc">
+            Description: {{ movie.description }}<br>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="padding-left: 18px">
+            {% for genre in movie.genres %}
+                <li style="list-style-type: none" class='genre-item'>
+                    {{ genre.name }}
+                </li>
+            {% endfor %}<br><br>
+        </td>
+    </tr>
+
+    <form action ="" method="post">
+        {{ form.hidden_tag() }}    
+
+        <tr>
+            <td style="padding-left: 20px">
+                <input type ="submit" name="action" value="Add to To-Watch List" class="dis-button">
+                <input type ="submit" name="action" value="Remove from To-Watch List" class="dis-button">
+                <input type ="submit" name="action" value="Add to Watched List" class="dis-button">
+                <input type ="submit" name="action" value="Remove from Watched List" class="dis-button">
+                {% if current_user.is_admin == True %}
+                <input type="submit" name="action" value="Delete Movie" class="del-movie">
+                {% endif %}
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-left: 16px">
+                {{ form.body(placeholder="create a post", class ="login-input") }}
+                <input type ="submit" name="action" value="post" class="dis-post">
+            </td>
+        </tr>
+    </form>
+
+    <tr>
+        <td style="padding-left: 20px">
+            {% for post in posts %}
+                {% include '_post.html' %}
+            {% endfor %}
+        </td>
+    </tr>
+</table>
+{% endblock %}

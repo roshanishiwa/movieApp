@@ -1,0 +1,84 @@
+<html>
+    <head>
+        {% if title %}
+            <title>
+                {{ title }} - FLIXMIX
+            </title>
+        {% else %}
+            <title>
+                Welcome to FlixMix!
+            </title>
+        {% endif %}
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+
+    <body> 
+        {% if current_user.is_anonymous %}
+        {% else %}
+            <div class ="nav-container">
+                <table>
+                    <tr>
+                        <li style="float:right">
+                            <a href="{{ url_for('logout') }}" class = "active">
+                                Logout
+                            </a>
+                        </li>
+                        
+                        <li style="float:right">
+                            <a href="{{ url_for('user', username=current_user.username) }}" class = "active">
+                                User: {{current_user.username}}
+                            </a>
+                        </li>
+                        
+                        <li style="padding-left:15px; padding-right:5px">
+                            <img src = "{{ url_for('static', filename = 'film.png')}}" width="40">
+                        </li>
+
+                        <li>
+                            <a href="{{ url_for('index') }}">
+                                My Movies
+                            </a>
+                        </li>
+
+                        {% if current_user.is_admin == True %}
+                            <li>
+                                <a href="{{ url_for('newMovie') }}">
+                                    Add a Movie
+                                </a>
+                            </li>
+
+                            <li style ="float:right">
+                                <a href="/admin" class = "active">
+                                    Admin
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        <li>
+                            <a href="{{ url_for('search') }}">
+                                Search
+                            </a>
+                        </li>
+                    </tr>
+                </table>
+            </div>
+        {% endif %}
+
+        <div>
+            {% with messages = get_flashed_messages() %}
+                
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class = "flash-container">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
+            {% endwith %}
+
+            {% block content %} {% endblock %}
+        </div>    
+    </body>
+</html>

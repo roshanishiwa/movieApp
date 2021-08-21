@@ -1,0 +1,48 @@
+<table class="movietable" style="width:100%;" valign="top">
+    <tr>
+        <td rowspan="6">
+            <img src="{{ url_for('static', filename = movie.image_id)}}" width="155">
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" class="movietitle">
+            <a href="{{ url_for('discussion', movieid=movie.id) }}">
+                {{ movie.title }}
+            </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="80%" class="moviedesc">
+            {{ movie.description }}
+        </td>
+    </tr>
+
+    <tr>
+        <td width="80%">
+            <a href="{{url_for('upVote', movie_id = movie.id)}}" width = "20" >
+                <img src="{{ url_for('static', filename = 'like.png' )}}"  width="20"> 
+            </a>
+
+            {{ movie.upVotes }}
+
+            <a href="{{url_for('downVote', movie_id = movie.id)}}" width = "20" >
+                <img src="{{ url_for('static', filename = 'dislike.png' )}}"  width="20">
+            </a>
+
+            {{ movie.downVotes }}
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style = "text-align:center" valign="bottom"><br>
+            {% for genre in movie.genres %}
+                <span class='genre-item'>
+                    {{ genre.name }}
+                </span>
+            {% endfor %}
+        </td>
+    </tr>
+
+</table>

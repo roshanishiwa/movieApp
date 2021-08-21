@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class = "banner">
+		<div class = "sub-form", style="color: #001a33">
+			Welcome.
+		</div>
+		<div class = "desc", style="padding-bottom: 20px">
+			<div style="color: #29343d">
+				Your movies, reccomendations, and watch history will be here
+			</div>
+		</div>
+	
+		{% if form %}
+			<form action="" method='POST'>
+				{{ form.hidden_tag() }}
+				<div style="padding-left: 20px;">
+					{{ form.select.label }}
+					{{ form.select(class = "index-search") }}
+					{{ form.submit(class = "search-bttn") }}
+				</div>
+			</form>
+		{% endif %}
+	</div>
+
+	Recommended Movie:
+	<div class="movielist">
+		{% for movie in recommended %}
+			<div class = "movie-box" style="padding-left: 20px">
+				{% include '_movie.html' %}
+			</div>
+		{% endfor %}
+	</div><br>
+
+	My To-Watch list:
+	<div class="movielist">
+		{% for movie in movies %}
+			<div class = "movie-box" style="padding-left: 20px">
+				{% include '_movie.html' %}
+			</div>
+		{% endfor %}
+	</div><br>
+
+	My Watched list:
+	<div class="movielist">
+		{% for movie in watched %}
+			<div class = "movie-box" style="padding-left: 20px">
+				{% include '_movie.html' %}
+			</div>
+		{% endfor %}
+	</div> 
+{% endblock %}

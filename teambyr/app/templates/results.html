@@ -1,0 +1,29 @@
+<doctype html="">
+    <title>
+        Search Results - Flask Music Database
+    </title>
+
+    <tr valign = "top">
+        <td style="font-size:20px; padding-left:20px">
+            Title: {{ movie.title }}<br>
+        </td>
+    </tr>
+    
+    <tr valign = "top">
+        <td style="font-size:20px; padding-left:20px">
+            Description: {{ movie.description }}<br>
+        </td>
+    </tr>
+
+    <tr> 
+        <td colspan="3" valign="bottom">  
+            <div style="padding-left:20px">
+                {% for genre in movie.genres.all() %}
+                    <li style="list-style-type: none" class='genre-item'>
+                        {{ genre.name }}
+                    </li>
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+</doctype>

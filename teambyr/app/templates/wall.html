@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="text-align: center">
+        <div class="register-title" style="padding-bottom: 20px;">
+            SECRET!
+        </div>
+
+        <form action="" method="post">
+            <div  style="padding-top: 100px;">
+                {{ form.password(placeholder="Enter Secret Code", class ="login-input") }}<br>
+            </div>
+            
+            {{ form.submit(class="register-button") }}
+        </form>
+    </div>
+{% endblock %}
